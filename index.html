@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HASS — Home Automation Smart System</title>
+  <meta name="description" content="HASS is an ESP32-based IoT smart home system: local-first control, sensors, Wi-Fi telemetry, Firebase sync and a mobile app.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-page="home">
+  <header id="site-header"></header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <span class="badge badge--accent"><span class="dot"></span>ESP32 · IoT · Local-First Control</span>
+          <h1 class="h1" style="margin-top:18px">Home Automation.<br><span class="accent">Intelligent Energy Management.</span></h1>
+          <p class="lead">HASS is an engineered, local-first IoT system designed to control appliances and monitor household power through an ESP32 controller, smart sensors, Wi-Fi and a companion mobile app.</p>
+          <div class="hero-actions">
+            <a class="btn btn--accent" href="documentation.html">EXPLORE SYSTEM ARCHITECTURE →</a>
+            <a class="mono-xs" href="app.html">↓ Mobile App Interface</a>
+          </div>
+        </div>
+        <div class="hero-media"><img class="img" src="Authentic HASS physical hardware prototype showing modular chassis, ventilation matrix, embedded diagnostic display and companion mobile app.png" alt="HASS controller and mobile app"></div>
+      </div>
+    </section>
+
+    <!-- INDUSTRIAL-GRADE -->
+    <section class="section section--soft">
+      <div class="container">
+        <p class="eyebrow eyebrow--accent">System Architecture</p>
+        <h2 class="h2" style="margin:8px 0">Industrial-Grade Physical Computing. No Black Boxes.</h2>
+        <p class="muted" style="max-width:640px;margin-bottom:36px">Every HASS module is inspectable, documented and serviceable — from the ESP32 controller to each solid-state relay channel.</p>
+        <div class="grid grid-2" style="align-items:start">
+          <div class="feature-list">
+            <div class="card feature-item"><div class="row"><span class="mono-xs" style="color:var(--accent)">Module 01 · Core</span><span class="mono-xs">ESP32</span></div><h3 class="h3">Central Controller Unit</h3><p class="small muted">Dual-core ESP32 orchestrating relays, sensors and Wi-Fi telemetry with deterministic local logic.</p></div>
+            <div class="card feature-item"><div class="row"><span class="mono-xs" style="color:var(--accent)">Module 02 · Actuation</span><span class="mono-xs">4 CH</span></div><h3 class="h3">Smart Solid-State Relay Board</h3><p class="small muted">Four isolated channels for silent, zero-crossing appliance switching.</p></div>
+            <div class="card feature-item"><div class="row"><span class="mono-xs" style="color:var(--accent)">Module 03 · Sensing</span><span class="mono-xs">DHT22</span></div><h3 class="h3">Multi-Sensor Telemetry Array</h3><p class="small muted">Temperature, humidity and current sensing feeding automation rules in real time.</p></div>
+            <div class="card feature-item"><div class="row"><span class="mono-xs" style="color:var(--accent)">Module 04 · Network</span><span class="mono-xs">Wi-Fi</span></div><h3 class="h3">Local Network Fabric</h3><p class="small muted">Wi-Fi LAN control with optional Firebase sync for remote access from the mobile app.</p></div>
+          </div>
+          <div class="card diagram-card">
+            <div style="display:flex;justify-content:space-between"><span class="mono-xs">System Topology Diagram</span><span class="badge badge--green">Live</span></div>
+            <div class="img-frame"><img class="img" src="hass-diagram-exact-fixed.png" alt="HASS architecture diagram"></div>
+            <div style="display:flex;gap:18px" class="mono-xs"><span><span class="dot"></span> Power Bus</span><span><span class="dot dot--green"></span> Data Link</span><span>Wi-Fi / Firebase</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROBLEM / SOLUTION -->
+    <section class="section">
+      <div class="container grid grid-2">
+        <div class="card problem-card">
+          <span class="badge badge--accent">The Problem</span>
+          <h2 class="h2" style="margin:16px 0 10px;font-size:24px">Households Bleed Up to 23% in Unmonitored Standby Loads.</h2>
+          <p class="small muted">Devices left on standby silently draw power around the clock with no visibility or control.</p>
+          <div class="bar" style="margin-top:22px"><span style="width:78%"></span></div>
+          <div class="bar"><span style="width:23%;background:#f4a07a"></span></div>
+          <ul class="check-list x-list" style="margin-top:18px"><li>No per-appliance monitoring</li><li>Manual switching only</li><li>Cloud plugs fail when the internet drops</li></ul>
+        </div>
+        <div class="card problem-card">
+          <span class="badge badge--green">The HASS Solution</span>
+          <h2 class="h2" style="margin:16px 0 10px;font-size:24px">Deterministic Circuit Cutoff &amp; Millisecond Visibility.</h2>
+          <p class="small muted">HASS measures every channel and cuts idle loads automatically from the local ESP32 controller.</p>
+          <div class="bar bar--green" style="margin-top:22px"><span style="width:12%"></span></div>
+          <ul class="check-list" style="margin-top:18px"><li>Per-channel power readings over Wi-Fi</li><li>Automatic cut-off rules and schedules</li><li>Works offline on the local network</li></ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section class="section section--soft">
+      <div class="container">
+        <div class="section-head section-head--center">
+          <p class="eyebrow eyebrow--accent">Signal Flow</p>
+          <h2 class="h2">How HASS Operates Within Your Premises</h2>
+          <p class="muted">From sensing to switching, every step happens inside your home network.</p>
+        </div>
+        <div class="grid grid-5">
+          <div class="card flow-card"><span class="icon-box icon-box--accent">⚡</span><p class="mono-xs">01 · Sense</p><h3 class="h3" style="font-size:14px">Current &amp; Thermal</h3><p class="small muted">Sensors sample load and room conditions.</p></div>
+          <div class="card flow-card"><span class="icon-box icon-box--accent">▣</span><p class="mono-xs">02 · Process</p><h3 class="h3" style="font-size:14px">HASS Controller</h3><p class="small muted">ESP32 evaluates rules locally.</p></div>
+          <div class="card flow-card"><span class="icon-box icon-box--accent">⌁</span><p class="mono-xs">03 · Transmit</p><h3 class="h3" style="font-size:14px">Encrypted LAN</h3><p class="small muted">State is shared over Wi-Fi.</p></div>
+          <div class="card flow-card"><span class="icon-box icon-box--accent">▯</span><p class="mono-xs">04 · Control</p><h3 class="h3" style="font-size:14px">HASS Mobile</h3><p class="small muted">App syncs through Firebase.</p></div>
+          <div class="card flow-card"><span class="icon-box icon-box--accent">⏻</span><p class="mono-xs">05 · Actuate</p><h3 class="h3" style="font-size:14px">Relay Isolation</h3><p class="small muted">Relays switch the appliance.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BEHAVIOURAL -->
+    <section class="section">
+      <div class="container">
+        <span class="badge badge--accent">On-Device Intelligence</span>
+        <h2 class="h2" style="margin:14px 0 8px">Behavioral Pattern Recognition Without Chatbots.</h2>
+        <p class="muted" style="max-width:640px;margin-bottom:32px">HASS learns daily usage patterns on the controller itself and suggests automations — no cloud AI required.</p>
+        <div class="grid grid-3">
+          <div class="card"><span class="icon-box">◎</span><h3 class="h3" style="margin:14px 0 8px;font-size:14px">Sequence Recognition</h3><p class="small muted">Detects recurring on/off sequences across rooms.</p></div>
+          <div class="card"><span class="icon-box">∿</span><h3 class="h3" style="margin:14px 0 8px;font-size:14px">Phantom Load Flagging</h3><p class="small muted">Spots devices drawing power while idle.</p></div>
+          <div class="card"><span class="icon-box">✓</span><h3 class="h3" style="margin:14px 0 8px;font-size:14px">Owner-Approved Confirmation</h3><p class="small muted">Every suggestion waits for your approval in the app.</p></div>
+        </div>
+        <div class="card chart-card" style="margin-top:20px">
+          <div style="display:flex;justify-content:space-between"><span class="mono-xs">Signature Inspection · Electric Water Heater</span><span class="badge badge--green">Pattern Detected</span></div>
+          <div class="img-frame"><img class="img" src="image.jpg" alt="Load signature chart"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TELEMETRY -->
+    <section class="section section--soft">
+      <div class="container">
+        <p class="eyebrow eyebrow--accent">Live Data</p>
+        <h2 class="h2" style="margin:8px 0 28px">Real-Time Telemetry Console</h2>
+        <div class="grid" style="grid-template-columns:1fr 1.6fr">
+          <div class="card">
+            <p class="mono-xs">Total Household Load</p>
+            <p style="font-size:30px;font-weight:700;color:var(--accent)">1.84 <span class="small muted">kW</span></p>
+            <div class="stat-pair" style="margin-top:18px"><div><p class="k">Today</p><p class="v">12.6 kWh</p></div><div><p class="k">Saved</p><p class="v">2.9 kWh</p></div></div>
+          </div>
+          <div class="card">
+            <p class="mono-xs" style="margin-bottom:14px">Active Channels</p>
+            <div class="telemetry-row"><span><span class="dot dot--green"></span> HVAC Heat Pump Loop</span><span class="badge badge--green">On</span></div>
+            <div class="telemetry-row"><span><span class="dot dot--green"></span> Refrigeration Compressor</span><span class="badge badge--green">On</span></div>
+            <div class="telemetry-row"><span><span class="dot dot--green"></span> Media Hub &amp; Audio</span><span class="badge badge--green">On</span></div>
+            <div class="telemetry-row"><span><span class="dot"></span> Desk Peripherals &amp; Workspace</span><span class="badge">Idle</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRIVACY -->
+    <section class="section">
+      <div class="container grid grid-2" style="align-items:center">
+        <div>
+          <span class="badge badge--green">Local-First Privacy</span>
+          <h2 class="h2" style="margin:14px 0 10px">Your Home Data Belongs in Your Home. Period.</h2>
+          <p class="muted small">Control and telemetry stay on your Wi-Fi network. Firebase is used only for optional remote access you enable.</p>
+          <div class="grid grid-2" style="margin-top:22px">
+            <div class="card card--flat"><h3 class="h3" style="font-size:14px">No Cloud Relay</h3><p class="small muted">Commands go straight to the ESP32.</p></div>
+            <div class="card card--flat"><h3 class="h3" style="font-size:14px">Wire-Speed Tamper Detection</h3><p class="small muted">Every packet is verified locally.</p></div>
+          </div>
+        </div>
+        <div class="card">
+          <p class="mono-xs" style="margin-bottom:10px">Data Residency</p>
+          <div class="kv"><span>Telemetry storage</span><span class="badge badge--green">On-device</span></div>
+          <div class="kv"><span>Remote access</span><span>Firebase (opt-in)</span></div>
+          <div class="kv"><span>Third-party sharing</span><span>None</span></div>
+          <div class="kv"><span>Local encryption</span><span class="badge badge--green">Enabled</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SPECS -->
+    <section class="section section--soft">
+      <div class="container">
+        <div class="section-head section-head--center"><p class="eyebrow eyebrow--accent">Bill of Materials</p><h2 class="h2">Complete Hardware &amp; Software Specifications</h2></div>
+        <div class="grid grid-4">
+          <div class="card spec-mini"><h4>Mains &amp; Relays</h4><ul><li>110–240V AC input</li><li>4× 10A SSR channels</li><li>Zero-crossing switching</li></ul></div>
+          <div class="card spec-mini"><h4>Local Mesh Bus</h4><ul><li>Wi-Fi 802.11 b/g/n</li><li>WebSocket control</li><li>mDNS discovery</li></ul></div>
+          <div class="card spec-mini"><h4>Embedded Core</h4><ul><li>ESP32 dual-core 240MHz</li><li>FreeRTOS firmware</li><li>OTA updates</li></ul></div>
+          <div class="card spec-mini"><h4>Chassis Mechanics</h4><ul><li>DIN-rail compatible</li><li>Flame-retardant ABS</li><li>Passive cooling</li></ul></div>
+        </div>
+        <div class="card cta-card" style="margin-top:40px">
+          <div><h2 class="h2" style="font-size:24px">Ready to Deploy Local-First Power Management?</h2><p class="muted small" style="margin-top:8px">Read the engineering manual or order the HASS controller kit.</p></div>
+          <div class="stack"><a class="btn btn--ghost" href="documentation.html">VIEW DOCUMENTATION</a><a class="btn btn--accent" href="shop.html">ORDER CONTROLLER KIT</a></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="site-footer"></footer>
+  <script src="script.js"></script>
+</body>
+</html>

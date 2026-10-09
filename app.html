@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HASS Mobile App — Interface User Manual</title>
+  <meta name="description" content="Complete user manual for the HASS mobile companion app: login, dashboard, device pairing, automation and settings.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-page="app" style="background:#fbfaf8">
+  <header id="site-header"></header>
+
+  <main>
+    <section class="hero" style="padding-bottom:56px">
+      <div class="container hero-grid" style="grid-template-columns:1.4fr 1fr">
+        <div>
+          <span class="badge badge--green"><span class="dot dot--green"></span>Official Companion App Manual v1.0</span>
+          <h1 class="h1" style="margin-top:14px">HASS Mobile Companion.<br><span class="accent">Complete Interface User Manual.</span></h1>
+          <p class="lead" style="font-size:13px">Master every screen, workflow and hardware integration in the HASS mobile app. Designed for ESP32 4-channel relay control, DHT22 climate automation and Firebase-backed remote access.</p>
+          <div style="display:flex;gap:12px;flex-wrap:wrap"><a class="btn btn--accent" href="#">⇩ Download Mobile Application</a><a class="btn btn--ghost" href="#auth">↓ Explore the Mobile Manual</a></div>
+        </div>
+        <div class="card card--flat">
+          <div class="kv"><span class="mono-xs">App Status</span><span class="badge badge--green">Local Execution Active</span></div>
+          <div class="kv"><span class="muted">Relay Channels</span><span>4 Channels</span></div>
+          <div class="kv"><span class="muted">Sync Mode</span><span>Local + Firebase</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 01 AUTH -->
+    <section class="manual-block" id="auth">
+      <div class="container">
+        <div class="section-head"><div><p class="eyebrow eyebrow--accent">Chapter 01</p><h2 class="h2" style="font-size:24px">Authentication &amp; Account Provisioning</h2></div><p class="side">Create a local administrator profile or sign in to your existing controller instance.</p></div>
+        <div class="manual-grid">
+          <div class="phones">
+            <div><div class="phone"><div class="img-frame"><img class="img" src="screenshot-1773317895012.png" alt="Login screen"></div></div><p class="phone-cap">Figure 1.1: Login Screen</p></div>
+            <div><div class="phone"><div class="img-frame"><img class="img" src="screenshot-1773317947403.png" alt="Create account screen"></div></div><p class="phone-cap">Figure 1.2: Create Account</p></div>
+          </div>
+          <div>
+            <div class="card info-card"><h4><span class="icon-box icon-box--accent">1</span>Initial Profile Registration</h4><p>Open the app and tap Create Account to register the main administrator. Profiles are secured with Firebase Authentication.</p><ul class="check-list" style="margin-top:10px"><li>Strong password enforced</li><li>Email verification for remote access</li></ul></div>
+            <div class="card info-card"><h4><span class="icon-box icon-box--accent">2</span>Encrypted Quick Login</h4><p>Subsequent logins use your saved credentials; the session token is stored securely on the device.</p><div class="kv mono" style="border:0"><span>Default Timeout: 15 minutes</span><span class="accent">Auth Protocol: Firebase</span></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 02 DASHBOARD -->
+    <section class="manual-block">
+      <div class="container">
+        <div class="section-head"><div><p class="eyebrow eyebrow--accent">Chapter 02</p><h2 class="h2" style="font-size:24px">Home Dashboard &amp; Real-Time Telemetry</h2></div><p class="side">The central command screen showing live device status, DHT22 climate readings and quick controls.</p></div>
+        <div class="manual-grid">
+          <div>
+            <div class="card info-card"><h4>▦ Microclimate &amp; Device State Cards</h4><p>The top cards show active devices and the live DHT22 temperature and humidity.</p><div class="stat-pair" style="margin-top:12px"><div><p class="k">Active Loads</p><p class="v accent">2 Active</p></div><div><p class="k">DHT22 Ambient</p><p class="v">24°C</p></div></div></div>
+            <div class="card info-card"><h4>⏻ Master Quick Controls &amp; Slot Cards</h4><p>Toggle each relay slot directly. Turn All On / Turn All Off buttons control every channel at once.</p></div>
+          </div>
+          <div class="phones" style="justify-content:flex-end">
+            <div><div class="phone"><div class="img-frame"><img class="img" src="screenshot-1773318233041.png" alt="Dashboard devices off"></div></div><p class="phone-cap">Figure 2.2: Standby State</p></div>
+            <div><div class="phone"><div class="img-frame"><img class="img" src="screenshot-1773318153486.png" alt="Dashboard screen"></div></div><p class="phone-cap">Figure 2.1: Active Dashboard</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 03 PAIRING -->
+    <section class="manual-block">
+      <div class="container">
+        <div class="section-head"><div><p class="eyebrow eyebrow--accent">Chapter 03</p><h2 class="h2" style="font-size:24px">Hardware Slot Pairing &amp; Device Setup</h2></div><p class="side">Assign each physical relay slot (1–4) to a named appliance with a category icon.</p></div>
+        <div class="manual-grid">
+          <div class="phones">
+            <div><div class="phone"><div class="img-frame"><img class="img" src="screenshot-1773318021594.png" alt="Add device screen"></div></div><p class="phone-cap">Figure 3.1: Slot Selection</p></div>
+            <div><div class="phone"><div class="img-frame"><img class="img" src="screenshot-1773318165622.png" alt="Device category screen"></div></div><p class="phone-cap">Figure 3.2: Category &amp; Icon</p></div>
+          </div>
+          <div>
+            <h3 class="h3" style="font-size:14px;margin-bottom:8px">The 4-Channel Terminal Mapping</h3>
+            <p class="small muted" style="margin-bottom:16px">The ESP32 controller exposes four relay outputs (S1–S4). Each one maps to a single device in the app.</p>
+            <div class="card info-card"><h4>▣ Slot Selection Matrix</h4><p>Pick a free slot; occupied slots are disabled automatically.</p></div>
+            <div class="card info-card"><h4>◈ Category Icons &amp; Labeling</h4><p>Choose lamp, fan, TV, AC or socket and give the device a name.</p></div>
+            <div class="card info-card"><h4>⚡ Instant Hardware Commissioning</h4><p>Saving pushes the mapping to the controller and Firebase instantly.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 04 DEVICE MGMT -->
+    <section class="manual-block">
+      <div class="container">
+        <div class="section-head"><div><p class="eyebrow eyebrow--accent">Chapter 04</p><h2 class="h2" style="font-size:24px">Device Management &amp; Status Inspection</h2></div><p class="side">Open a device to view its state, slot, runtime and to edit or delete it.</p></div>
+        <div class="manual-grid">
+          <div class="phones">
+            <div><div class="phone"><div class="img-frame"><img class="img" src="screenshot-1773318174066.png" alt="Device details"></div></div><p class="phone-cap">Figure 4.1: Device Details</p></div>
+            <div><div class="phone"><div class="img-frame"><img class="img" src="screenshot-1773318240490.png" alt="Delete device"></div></div><p class="phone-cap">Figure 4.3: Delete Prompt</p></div>
+            <div><div class="phone"><div class="img-frame"><img class="img" src="screenshot-1773318726487.png" alt="Device on"></div></div><p class="phone-cap">Figure 4.2: Active State</p></div>
+          </div>
+          <div class="card info-card">
+            <h4>Inspection Breakdown</h4>
+            <div class="kv"><span class="muted">Hardware Slot</span><span class="mono accent">Slot 1 / Relay 1</span></div>
+            <div class="kv"><span class="muted">State Mode</span><span class="mono">ON / OFF (Realtime)</span></div>
+            <div class="kv"><span class="muted">Sync Channel</span><span class="mono">Wi-Fi + Firebase</span></div>
+            <p style="margin-top:12px">Tapping CONTROL toggles the relay; Delete frees the slot for another device.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 05 AUTOMATION -->
+    <section class="manual-block">
+      <div class="container">
+        <div class="section-head"><div><p class="eyebrow eyebrow--accent">Chapter 05</p><h2 class="h2" style="font-size:24px">Advanced Local Automation Suite</h2></div><p class="side">If-Then climate rules, weekly schedules and countdown timers — all executed on the ESP32.</p></div>
+        <div class="grid grid-4">
+          <div><div class="phone" style="max-width:none"><div class="img-frame"><img class="img" src="screenshot-1773318191291.png" alt="Weekly schedules"></div></div><p class="h3" style="font-size:12px;text-align:center;margin-top:10px">Weekly Schedules</p></div>
+          <div><div class="phone" style="max-width:none"><div class="img-frame"><img class="img" src="screenshot-1773318213871.png" alt="Control hub menu"></div></div><p class="h3" style="font-size:12px;text-align:center;margin-top:10px">Control Hub Menu</p></div>
+          <div><div class="phone" style="max-width:none"><div class="img-frame"><img class="img" src="screenshot-1773318200360.png" alt="Countdown timers"></div></div><p class="h3" style="font-size:12px;text-align:center;margin-top:10px">Countdown Timers</p></div>
+          <div><div class="phone" style="max-width:none"><div class="img-frame"><img class="img" src="screenshot-1773318393449.png" alt="If-Then rules"></div></div><p class="h3" style="font-size:12px;text-align:center;margin-top:10px">If-Then Climate Logic</p></div>
+        </div>
+        <div class="card info-card" style="margin-top:28px"><h4>Autonomous Local Processing Engine</h4><p>Rules are stored on the controller, so automations keep running even if your internet connection or the phone is offline.</p></div>
+      </div>
+    </section>
+
+    <!-- 06 SETTINGS -->
+    <section class="manual-block">
+      <div class="container">
+        <div class="section-head"><div><p class="eyebrow eyebrow--accent">Chapter 06</p><h2 class="h2" style="font-size:24px">App Navigation, Settings &amp; Personalization</h2></div><p class="side">Navigation drawer, board pairing, dark mode and language preferences.</p></div>
+        <div class="manual-grid">
+          <div class="phones">
+            <div><div class="phone"><div class="img-frame"><img class="img" src="screenshot-1773318043475.png" alt="Navigation drawer"></div></div><p class="phone-cap">Figure 6.1: Side Navigation</p></div>
+            <div><div class="phone"><div class="img-frame"><img class="img" src="screenshot-1773318033520.png" alt="Settings screen"></div></div><p class="phone-cap">Figure 6.2: Settings</p></div>
+          </div>
+          <div>
+            <div class="card info-card"><h4>Quick Access Navigation</h4><p>Swipe or tap the menu icon to reach Dashboard, Devices, Automation and Settings.</p><div class="grid grid-2" style="gap:8px;margin-top:12px"><span class="badge">Home Dashboard</span><span class="badge">Device Center</span><span class="badge">Automation</span><span class="badge">Settings &amp; Theme</span></div></div>
+            <div class="card info-card"><h4>Board Pairing &amp; System Preferences</h4><div class="kv"><span>Hardware Board Pairing</span><span class="badge badge--accent">ESP32</span></div><div class="kv"><span>High-Contrast Dark Mode</span><span class="muted">Toggle</span></div><div class="kv"><span>Bilingual Interface (English/Arabic)</span><span class="muted">EN / AR</span></div><div class="kv" style="border:0"><span>Profile Management</span><span class="muted">Edit</span></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="site-footer"></footer>
+  <script src="script.js"></script>
+</body>
+</html>

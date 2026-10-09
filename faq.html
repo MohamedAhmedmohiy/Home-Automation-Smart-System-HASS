@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HASS FAQ — Frequently Asked Questions</title>
+  <meta name="description" content="Answers about HASS hardware, ESP32 controller, Wi-Fi, Firebase, the mobile app and privacy.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-page="faq">
+  <header id="site-header"></header>
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <p class="eyebrow"><span class="dot"></span> <span class="eyebrow--accent">Support // Knowledge Base</span></p>
+        <h1 class="h1" style="margin-top:8px">Frequently Asked Questions</h1>
+        <p class="lead">Quick answers about the HASS controller, sensors, connectivity and the mobile app.</p>
+      </div>
+    </section>
+    <section style="padding-bottom:96px">
+      <div class="container" style="max-width:820px">
+        <div class="faq-item"><button class="faq-q">What is HASS?<span class="plus">+</span></button><div class="faq-a">HASS (Home Automation Smart System) is an ESP32-based IoT system that controls home appliances through relays and monitors them with sensors, using Wi-Fi and a mobile app.</div></div>
+        <div class="faq-item"><button class="faq-q">Does HASS work without internet?<span class="plus">+</span></button><div class="faq-a">Yes. Control and automations run locally on the ESP32 over your Wi-Fi network. Internet is only needed for remote access through Firebase.</div></div>
+        <div class="faq-item"><button class="faq-q">How many devices can I connect?<span class="plus">+</span></button><div class="faq-a">The base controller has four relay channels; each channel controls one appliance.</div></div>
+        <div class="faq-item"><button class="faq-q">Which sensors are supported?<span class="plus">+</span></button><div class="faq-a">DHT22 temperature &amp; humidity and current sensors are supported out of the box for If-Then automation rules.</div></div>
+        <div class="faq-item"><button class="faq-q">Where is my data stored?<span class="plus">+</span></button><div class="faq-a">On the controller in your home. Firebase sync is optional and used only for remote control from the mobile app.</div></div>
+        <div class="faq-item"><button class="faq-q">How do I get the mobile app?<span class="plus">+</span></button><div class="faq-a">See the <a class="accent" href="app.html">App manual</a> for download and setup steps.</div></div>
+      </div>
+    </section>
+  </main>
+  <footer id="site-footer"></footer>
+  <script src="script.js"></script>
+</body>
+</html>
